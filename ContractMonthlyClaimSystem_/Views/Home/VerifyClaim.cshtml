@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ClaimModel>
+
+<table>
+    <thead>
+        <tr>
+            <th>Lecturer</th>
+            <th>Hours Worked</th>
+            <th>Hourly Rate</th>
+            <th>Total</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.LecturerName</td>
+                <td>@claim.HoursWorked</td>
+                <td>@claim.HourlyRate</td>
+                <td>@claim.TotalAmount</td>
+                <td>
+                    <button asp-action="ApproveClaim" asp-route-id="@claim.Id">Approve</button>
+                    <button asp-action="RejectClaim" asp-route-id="@claim.Id">Reject</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
