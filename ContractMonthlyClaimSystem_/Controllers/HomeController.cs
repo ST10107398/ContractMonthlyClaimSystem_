@@ -28,5 +28,19 @@ namespace ContractMonthlyClaimSystem_.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        [HttpPost]
+        public IActionResult ApproveClaim(int claimId)
+        {
+            // Logic to mark claim as approved in the database
+            return RedirectToAction("PendingClaims");
+        }
+
+        [HttpPost]
+        public IActionResult RejectClaim(int claimId)
+        {
+            // Logic to reject the claim
+            return RedirectToAction("PendingClaims");
+        }
     }
 }

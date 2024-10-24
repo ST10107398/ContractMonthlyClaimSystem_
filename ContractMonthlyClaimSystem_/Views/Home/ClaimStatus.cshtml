@@ -1,0 +1,12 @@
+﻿@if (Model.Status == "Pending")
+{
+    <span class="badge badge-warning">Pending</span>
+}
+else if (Model.Status == "Approved")
+{
+    <span class="badge badge-success">Approved</span>
+}
+else
+{
+    <span class="badge badge-danger">Rejected</span>
+}
